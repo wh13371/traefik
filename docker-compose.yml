@@ -1,0 +1,12 @@
+version: '3'
+services:
+  traefik:
+    build: .
+    container_name: traefik
+    volumes:
+      - $PWD/traefik.yml:/etc/traefik/traefik.yml
+      - $PWD/routes.yml:/etc/traefik/routes.yml
+    ports:
+      - 80:80
+      - 8080:8080
+    network_mode: host
