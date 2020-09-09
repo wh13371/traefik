@@ -1,0 +1,23 @@
+## STATIC CONFIGURATION
+log:
+  level: DEBUG
+  filePath: "/etc/traefik/traefik.log"
+  format: json
+
+accessLog:
+  filePath: "/etc/traefik/access.log"
+  format: json
+  
+api:
+  insecure: true
+  dashboard: true
+  debug: true
+
+entryPoints:
+  web:
+    address: ":80"
+
+providers:
+  file:
+      filename: /etc/traefik/routes.yml
+      watch: true
