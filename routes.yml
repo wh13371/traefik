@@ -1,0 +1,10 @@
+http:
+  routers:
+      flaskrouter:
+          rule: "Path(`/`)"
+          service: flask
+  services:
+      flask:
+        loadBalancer:
+          servers:
+            - url: "http://x.x.x.x:xxxx"
